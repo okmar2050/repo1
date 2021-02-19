@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+  {% block body_block %}
+    <div class="-container" >
+    <h1>Signup Form</h1><hr>
+    <form method="post">
+        {% csrf_token %}
+        {%for i in form %}
+        {{i.label_tag}}{{i}}{{i.erros|striptags}}<br><br>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">SignUp</button>
+    </form>
+    </div>
+      If you have account already then..... <a href="/accounts/login">click here to login</a>
+
+  {% endblock %}
